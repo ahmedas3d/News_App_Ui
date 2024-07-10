@@ -9,7 +9,7 @@ class CardNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 15),
+      margin: const EdgeInsets.only(right: 20),
       height: 140,
       width: 240,
       decoration: BoxDecoration(
@@ -23,7 +23,7 @@ class CardNews extends StatelessWidget {
       child: Center(
           child: Text(
         category.categoryName,
-        style: TextStyle(
+        style: const TextStyle(
             fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
       )),
     );

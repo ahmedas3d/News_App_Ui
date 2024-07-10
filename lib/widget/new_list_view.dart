@@ -8,15 +8,13 @@ class NewListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: BouncingScrollPhysics(),
-      itemCount: 7,
-      itemBuilder: (context, index) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(childCount: 10, (context, index) {
         return const Padding(
-          padding: EdgeInsets.only(bottom: 20),
+          padding: EdgeInsets.only(bottom: 22),
           child: NewsTile(),
         );
-      },
+      }),
     );
   }
 }

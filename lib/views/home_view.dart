@@ -16,6 +16,13 @@ class HomwView extends StatelessWidget {
         title: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Icon(
+              Icons.menu,
+              size: 28,
+            ),
+            Spacer(
+              flex: 1,
+            ),
             Text(
               "News",
               style: TextStyle(fontWeight: FontWeight.bold),
@@ -25,22 +32,41 @@ class HomwView extends StatelessWidget {
               style:
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.orange),
             ),
+            Spacer(
+              flex: 1,
+            ),
+            Icon(
+              Icons.search,
+              size: 30,
+            ),
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Column(
-          children: [
-            CategorysListView(),
-            SizedBox(
-              height: 35,
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 15),
+        child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: CategorysListView(),
             ),
-            Expanded(
-              child: NewListView(),
+            SliverToBoxAdapter(
+              child: SizedBox(height: 35),
             ),
+            NewListView(),
           ],
         ),
+        // child: Column(
+        //   children: [
+        //     CategorysListView(),
+        //     SizedBox(
+        //       height: 35,
+        //     ),
+        //     Expanded(
+        //       child: NewListView(),
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }
