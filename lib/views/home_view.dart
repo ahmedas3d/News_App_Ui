@@ -11,6 +11,7 @@ class HomwView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 80,
         centerTitle: true,
         title: const Row(
